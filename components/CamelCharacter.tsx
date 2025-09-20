@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface CamelCharacterProps {
@@ -14,57 +13,55 @@ const CamelCharacter: React.FC<CamelCharacterProps> = ({ className, isHappy = fa
       className={className}
     >
       <defs>
-        <radialGradient id="camel-grad" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-          <stop offset="0%" style={{ stopColor: '#f8d085' }} />
-          <stop offset="100%" style={{ stopColor: '#eab308' }} />
-        </radialGradient>
         <style>
             {`
-            .camel-body { transition: all 0.3s ease-in-out; }
             .happy-eye { display: ${isHappy ? 'block' : 'none'}; }
             .normal-eye { display: ${isHappy ? 'none' : 'block'}; }
             `}
         </style>
       </defs>
       
-      <g transform="translate(100, 100) scale(0.9)">
+      <g transform="translate(100, 110) scale(0.95)">
         {/* Shadow */}
-        <ellipse cx="0" cy="85" rx="70" ry="15" fill="rgba(0,0,0,0.15)" />
+        <ellipse cx="0" cy="70" rx="75" ry="15" fill="rgba(0,0,0,0.1)" />
 
         {/* Legs */}
-        <rect x="-55" y="30" width="20" height="60" rx="10" fill="#d69e2e" />
-        <rect x="-25" y="30" width="20" height="60" rx="10" fill="#d69e2e" />
-        <rect x="15" y="30" width="20" height="60" rx="10" fill="#d69e2e" />
-        <rect x="45" y="30" width="20" height="60" rx="10" fill="#d69e2e" />
-        
+        <rect x="-60" y="20" width="22" height="55" rx="11" fill="#F3D1A3" />
+        <rect x="-25" y="20" width="22" height="55" rx="11" fill="#F3D1A3" />
+        <rect x="10" y="20" width="22" height="55" rx="11" fill="#F3D1A3" />
+        <rect x="45" y="20" width="22" height="55" rx="11" fill="#F3D1A3" />
+
         {/* Body */}
-        <path className="camel-body" d="M -70,40 C -80,-20 0,-30 20,-30 C 40,-30 80,-20 70,40 Z" fill="url(#camel-grad)" />
+        <path d="M -75,30 C -85,-20 -10,-40 30,-40 C 70,-40 95,-20 85,30 Z" fill="#F9E4C5" stroke="#D4A373" strokeWidth="4" />
         
         {/* Hump */}
-        <path d="M -20,-30 C -10,-70 10,-70 20,-30 Z" fill="url(#camel-grad)" />
+        <path d="M -15,-40 C -5,-80 25,-80 35,-40 Z" fill="#F3D1A3" stroke="#D4A373" strokeWidth="4" />
         
         {/* Neck and Head */}
-        <path d="M 50,20 C 90,-20 100,-60 80,-80 C 60,-100 40,-90 50,-60 L 70,-30 C 60,-10 50,0 50,20 Z" fill="url(#camel-grad)" />
+        <path d="M 60,10 C 100,-30 110,-70 90,-90 C 70,-110 50,-100 60,-70 L 80,-40 C 70,-20 60,-10 60,10 Z" fill="#F9E4C5" stroke="#D4A373" strokeWidth="4" />
         
         {/* Eye - Normal */}
         <g className="normal-eye">
-          <circle cx="75" cy="-70" r="5" fill="black" />
-          <circle cx="77" cy="-72" r="1.5" fill="white" />
+          <circle cx="85" cy="-80" r="7" fill="white" />
+          <circle cx="87" cy="-82" r="4" fill="black" />
         </g>
 
         {/* Eye - Happy */}
         <g className="happy-eye">
-            <path d="M 70 -72 Q 75 -65 80 -72" stroke="black" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+            <path d="M 80 -82 Q 85 -75 90 -82" stroke="black" strokeWidth="3" fill="none" strokeLinecap="round" />
         </g>
         
         {/* Ear */}
-        <path d="M 55 -85 C 50 -95 60 -95 55 -85 L 60 -75 Z" fill="#d69e2e" />
+        <path d="M 65 -95 C 60 -105 70 -105 65 -95 L 70 -85 Z" fill="#F3D1A3" stroke="#D4A373" strokeWidth="3" />
         
-        {/* Mouth */}
-        <path d="M 85 -55 Q 80 -50 75 -55" stroke="black" strokeWidth="2" fill="none" strokeLinecap="round" />
-        
+        {/* Sadu Blanket */}
+        <path d="M -30,-42 L 50, -42 L 55, -15 L -35, -15 Z" fill="#f56565" />
+        <rect x="-33" y="-30" width="86" height="5" fill="#4fd1c5" />
+        <rect x="-33" y="-22" width="86" height="5" fill="#f6e05e" />
+
         {/* Tail */}
-        <path d="M -70,20 C -80,10 -80,0 -75,-10" stroke="#d69e2e" strokeWidth="8" fill="none" strokeLinecap="round" />
+        <path d="M -75,10 C -90,0 -90,-10 -80,-20" stroke="#D4A373" strokeWidth="6" fill="none" strokeLinecap="round" />
+        <circle cx="-80" cy="-25" r="5" fill="#D4A373" />
       </g>
     </svg>
   );
